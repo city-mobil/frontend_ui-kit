@@ -1,0 +1,81 @@
+.table {
+  display: grid;
+  margin: 0;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--separatorsColor);
+  color: var(--mainTextColor);
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+
+  &:first-child {
+    padding-left: 16px;
+  }
+
+  &:last-child {
+    padding-right: 16px;
+  }
+
+  &_sortable {
+    cursor: pointer;
+  }
+
+  &Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 2px;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    opacity: 0;
+    transform: rotate(180deg);
+
+    &_sorted {
+      opacity: 1;
+    }
+
+    &_desc {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.cell {
+  min-height: 32px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--separatorsColor);
+  color: var(--mainTextColor);
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+
+  &:first-child {
+    padding-left: 16px;
+  }
+
+  &:last-child {
+    padding-right: 16px;
+  }
+}
+
+.row {
+  display: contents;
+
+  &:hover .cell {
+    background-color: var(--cellHover);
+  }
+}
+

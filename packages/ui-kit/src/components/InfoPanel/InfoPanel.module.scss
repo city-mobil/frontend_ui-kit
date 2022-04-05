@@ -1,0 +1,27 @@
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 24px;
+  background-color: var(--gray200);
+  border-radius: 8px;
+
+  &_error {
+    background-color: var(--danger100);
+  }
+}
+
+.icon {
+  width: 240px;
+
+  > img {
+    width: 100%;
+  }
+}
+
+.content {
+  width: 372px;
+  margin-left: 44px;
+  white-space: pre-line;
+}

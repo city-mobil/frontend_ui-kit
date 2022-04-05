@@ -1,0 +1,46 @@
+.badge {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 5px;
+  margin-left: 4px;
+  background-color: var(--primaryDefaultColor);
+  color: var(--onPrimaryDefaultColor);
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.closeIcon {
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  padding: 3px 4px 3px 8px;
+  margin-right: 8px;
+  background-color: var(--gray100);
+  color: var(--secondaryText);
+  border-radius: 2px;
+  cursor: default;
+  transition: 0.1s;
+
+  &:hover {
+    background-color: var(--gray400);
+    color: var(--mainTextColor);
+
+    .closeIcon {
+      path {
+        fill: var(--iconHoverColor);
+      }
+    }
+  }
+}
+
+.tagLg {
+  margin-right: 0;
+}

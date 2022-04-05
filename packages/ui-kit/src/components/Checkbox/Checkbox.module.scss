@@ -1,0 +1,115 @@
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  transition: background-color 0.15s, border-color 0.15s, fill 0.15s;
+  vertical-align: top;
+  border: 2px solid;
+
+  border-color: var(--inputBorder);
+  background: var(--blockBackground);
+
+  &__checked {
+    border-color: var(--primaryBorderColor);
+    background: var(--primaryDefaultColor);
+  }
+
+  &__disabled {
+    border-color: var(--inputBorder);
+    background: var(--disabledColor);
+    cursor: default;
+  }
+
+  path {
+    fill: var(--blockBackground);
+  }
+
+  &__checked.checkbox__disabled {
+    path {
+      fill: var(--iconDefaultColor);
+    }
+  }
+}
+
+.label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: top;
+
+  &__disabled {
+    cursor: default;
+
+    @media (hover: hover) {
+      &:hover {
+        .checkbox {
+          background: var(--disabledColor);
+        }
+      }
+    }
+
+    &:active {
+      .checkbox {
+        background: var(--disabledColor);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.label__disabled) {
+      .checkbox {
+        background: var(--cellHover);
+      }
+    }
+  }
+
+  &:active:not(.label__disabled) {
+    .checkbox {
+      background: var(--cellHover);
+    }
+  }
+
+  &__checked {
+
+    @media (hover: hover) {
+      &:hover:not(.label__disabled) {
+        .checkbox {
+          background: var(--primaryHoverColor);
+        }
+      }
+    }
+
+    &:active:not(.label__disabled) {
+      .checkbox {
+        background: var(--primaryActiveColor);
+      }
+    }
+  }
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.text {
+  margin-left: 8px;
+  color: var(--mainTextColor);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+
+  &__disabled {
+    color: var(--mutedTextColor);
+  }
+}

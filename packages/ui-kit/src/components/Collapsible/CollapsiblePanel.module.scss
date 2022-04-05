@@ -1,0 +1,48 @@
+.container {
+  overflow: hidden;
+  border: 1px solid var(--inputBorder);
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  // height: ${({ headerHeight }) => headerHeight}px;
+
+  &:hover {
+    background-color: var(--gray200);
+  }
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  // height: ${(props) => props.headerHeight}px;
+}
+
+.arrow {
+  // ${(props) => props.isOpened && 'transform: rotate(180deg)'};
+  transition: transform 0.15s ease-in;
+  padding: 16px;
+
+  &__opened {
+    transform: rotate(180deg);
+  }
+}
+
+.body {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+}
+
+.separator {
+  flex: 0 0 1px;
+  background-color: var(--gray200);
+  background-image: linear-gradient(to right, var(--separatorsColor) 20%, rgba(255, 255, 255, 0) 0%);
+  background-position: top;
+  background-size: 5px 1px;
+}

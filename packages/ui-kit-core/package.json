@@ -1,0 +1,38 @@
+{
+  "private": false,
+  "name": "@city/ui-kit-core",
+  "version": "5.0.0-alpha.13",
+  "description": "",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "storybook": "npm run gen-themes && rollup -c --watch",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "stylelint": "stylelint './src/**/*.{scss,css}'",
+    "stylelint:fix": "stylelint './src/**/*.{scss,css}' --fix",
+    "tsc": "tsc --project tsconfig.json",
+    "lintAll": "concurrently --kill-others-on-fail \"npm:lint\" \"npm:tsc\" \"npm:stylelint\"",
+    "gen-themes": "./tools/themes-generator.js",
+    "prebuild": "node tools/prebuild.js",
+    "copyFiles": "node tools/copyFiles.js",
+    "build": "npm run prebuild && npm run gen-themes && rollup -c && npm run copyFiles"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "eslint": "^8.9.0",
+    "rollup": "^2.53.1",
+    "stylelint": "^14.5.0",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "@popperjs/core": "^2.10.1",
+    "classnames": "^2.3.1",
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17",
+    "react-popper": "^2.2.5"
+  }
+}

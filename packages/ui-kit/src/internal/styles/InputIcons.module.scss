@@ -1,0 +1,79 @@
+.iconsContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &__left {
+    &__xs {
+      left: 6px;
+    }
+
+    &__sm {
+      left: 10px;
+    }
+
+    &__md {
+      left: 12px;
+    }
+
+    &__lg {
+      left: 16px;
+    }
+  }
+
+  &__right {
+    &__xs {
+      right: 6px;
+    }
+
+    &__sm {
+      right: 10px;
+    }
+
+    &__md {
+      right: 12px;
+    }
+
+    &__lg {
+      right: 16px;
+    }
+  }
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 100%;
+
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  & > svg path {
+    transition: fill 0.15s ease-in;
+    fill: var(--iconDefaultColor);
+  }
+
+  &__isError {
+    & > svg path {
+      fill: var(--negativeDefaultColor);
+    }
+  }
+
+  &__interactable {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover:not(.iconContainer__isError) {
+      & > svg path {
+        fill: var(--iconHoverColor);
+      }
+    }
+  }
+}

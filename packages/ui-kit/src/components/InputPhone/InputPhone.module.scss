@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+}
+
+.inputContainer {
+  z-index: 0;
+  width: 100%;
+
+  & > div {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:focus-within {
+    z-index: 2;
+  }
+}

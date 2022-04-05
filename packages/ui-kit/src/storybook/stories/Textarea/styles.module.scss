@@ -1,0 +1,12 @@
+.tests {
+  display: grid;
+  gap: 8px;
+}
+
+.textArea {
+  height: 100px;
+}
+
+.textAreaAutoresize {
+  max-height: 100px;
+}

@@ -1,0 +1,19 @@
+.popover.popover {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 4px 0;
+}
+
+.multiselectPopover.multiselectPopover {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 12px 12px;
+
+  &__submittable {
+    padding-bottom: 0;
+  }
+}
+
+.confirmButton {
+  margin: 16px;
+}

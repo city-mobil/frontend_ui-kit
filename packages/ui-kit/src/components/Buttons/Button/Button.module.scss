@@ -1,0 +1,182 @@
+@import '../../../styles/variables';
+
+.contentDisabled, %contentDisabled {
+  border: 1px solid var(--disabledColor);
+  background-color: var(--disabledColor);
+  color: var(--mutedTextColor);
+  cursor: auto;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+
+  &__xs {
+    height: $height__xs;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__sm {
+    height: $height__sm;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 13px;
+  }
+
+  &__md {
+    height: $height__md;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-size: 15px;
+  }
+
+  &__lg {
+    height: $height__lg;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-size: 17px;
+  }
+
+  &__flat {
+    padding-right: 0;
+    padding-left: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--secondaryText);
+    font-weight: 400;
+    transition: color 0.15s ease-in;
+  }
+
+  &__flat.content__disabled {
+    border: none;
+    background-color: transparent;
+    color: var(--disabledColor);
+    cursor: auto;
+  }
+
+  &__primary {
+    border: 1px solid var(--primaryBorderColor);
+    background-color: var(--primaryDefaultColor);
+    color: var(--onPrimaryDefaultColor);
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+  }
+
+  &__secondary {
+    border: 1px solid var(--secondaryBorderColor);
+    background-color: var(--secondaryDefaultColor);
+    color: var(--onSecondaryDefaultColor);
+    transition: transform 0.15s ease-out, background-color 0.15s ease-out;
+  }
+
+  &__disabled:not(.content__flat) {
+
+    @extend %contentDisabled;
+  }
+}
+
+.button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__fullWidth {
+    display: block;
+    width: 100%;
+  }
+
+  &__linkDisabled {
+    pointer-events: none;
+  }
+
+  &__link {
+    display: inline-flex;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    &:hover:not([disabled]):not(.button__linkDisabled) {
+      .content {
+        transition: transform 0.1s cubic-bezier(0.39, 0.575, 0.565, 1),
+          background-color 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transform: translateY(-2px);
+
+        &__primary {
+          background-color: var(--primaryHoverColor);
+          border-color: var(--primaryHoverColor);
+          box-shadow: 0 4px 8px var(--primaryActiveColor) 30;
+        }
+
+        &__secondary {
+          background-color: var(--secondaryHoverColor);
+          color: var(--onSecondaryHoverColor);
+          box-shadow: 0 4px 8px var(--secondaryHoverColor) 20;
+          border-color: var(--secondaryHoverColor);
+        }
+
+        &__flat {
+          color: var(--mainTextColor);
+          transform: none;
+        }
+      }
+    }
+  }
+
+  &:active:not([disabled]):not(.button__linkDisabled) {
+    .content {
+      transform: translateY(-2px);
+      transition: transform 0.1s cubic-bezier(0.39, 0.575, 0.565, 1),
+        background-color 0.1s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+      &__primary {
+        background-color: var(--primaryActiveColor);
+        border-color: var(--primaryActiveColor);
+        transition: transform 0.08s, background-color 0.08s;
+        transform: scale(0.98);
+      }
+
+      &__secondary {
+        background-color: var(--secondaryActiveColor);
+        color: var(--onSecondaryActiveColor);
+        border-color: var(--secondaryActiveColor);
+        transition: transform 0.08s, background-color 0.08s;
+        transform: scale(0.98);
+      }
+
+      &__flat {
+        color: var(--mainTextColor);
+        transition: color 0.15s ease-in;
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+}
+
+.childrenLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}

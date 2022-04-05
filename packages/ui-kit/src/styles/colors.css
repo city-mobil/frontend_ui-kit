@@ -1,0 +1,22 @@
+:root {
+    --brandOrange: #FF7200;
+    --hoverOrange: #FF5A00;
+    --activeOrange: #F75700;
+    --lightOrange: #FFEAD9;
+    --orangeShadow: #FF5A0030;
+    --black: #0C0C0C;
+    --blackShadow: #0C0C0C20;
+    --white: #FFFFFF;
+    --gray: #9A9CA3;
+    --concreteGray: #E5E5E5;
+    --lightGray: #D6D8DD;
+    --darkGray: #585C67;
+    --iceGray: #F3F5F9;
+    --iceGray0Opacity: #F3F5F900;
+    --brandPurple: #6153F9;
+    --error: #E73626;
+    --errorShadow: #E7362610;
+    --dateError: #FDF1F0;
+    --link: #0744FF;
+    --success: #2FBB17;
+}

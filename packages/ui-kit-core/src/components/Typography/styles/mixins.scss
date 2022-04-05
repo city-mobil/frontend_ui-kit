@@ -1,0 +1,25 @@
+@mixin fontWeightBold {
+  font-weight: 700;
+}
+
+@mixin fontWeightMedium {
+  font-weight: 500;
+}
+
+@mixin fontWeightRegular {
+  font-weight: 400;
+}
+
+@mixin fontMontserrat {
+  font-family: Montserrat, sans-serif;
+}
+
+@mixin fontRoboto {
+  font-family: Roboto, sans-serif;
+}
+
+@mixin commonText {
+
+  @include fontRoboto;
+  @include fontWeightRegular;
+}

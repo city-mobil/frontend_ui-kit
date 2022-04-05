@@ -1,0 +1,31 @@
+.arrowBottom {
+  margin-left: 4px;
+  transition: transform 0.15s ease-in;
+
+  path {
+    transition: fill 0.15s ease-in;
+    fill: var(--iconDefaultColor);
+  }
+
+  &__open {
+    transform: rotate(180deg);
+
+    path {
+      fill: var(--iconHoverColor);
+    }
+  }
+}
+
+.button {
+  &__open > div {
+    color: var(--mainTextColor);
+  }
+
+  &:hover {
+    color: var(--mainTextColor);
+
+    .arrowBottom path {
+      fill: var(--iconHoverColor);
+    }
+  }
+}

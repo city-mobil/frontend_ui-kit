@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  color: var(--mainTextColor);
+  border-radius: 6px;
+  transition: 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--gray200);
+  }
+
+  &:active {
+    background-color: var(--gray400);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}

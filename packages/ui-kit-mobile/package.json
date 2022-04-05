@@ -1,0 +1,49 @@
+{
+  "private": false,
+  "name": "@city/ui-kit-mobile",
+  "version": "5.0.0-alpha.13",
+  "description": "",
+  "main": "./index.umd.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "storybook": "start-storybook -p 9008",
+    "build-storybook": "build-storybook",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "stylelint": "stylelint './src/**/*.{scss,css}'",
+    "stylelint:fix": "stylelint './src/**/*.{scss,css}' --fix",
+    "tsc": "tsc --project tsconfig.json",
+    "lintAll": "concurrently --kill-others-on-fail \"npm:lint\" \"npm:tsc\" \"npm:stylelint\"",
+    "prebuild": "node tools/prebuild.js",
+    "copyFiles": "node tools/copyFiles.js",
+    "build": "npm run prebuild && rollup -c && npm run copyFiles"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@city/ui-kit-core": "^5.0.0-alpha.13",
+    "@popperjs/core": "^2.10.1",
+    "normalize.css": "^8.0.1",
+    "react-popper": "^2.2.5",
+    "react-spring": "^9.2.3",
+    "react-use-gesture": "^9.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "eslint": "^8.9.0",
+    "rollup": "^2.53.1",
+    "stylelint": "^14.5.0",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17"
+  }
+}

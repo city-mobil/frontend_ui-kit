@@ -1,0 +1,27 @@
+@import '../../../styles/selectors';
+@import 'mixins';
+
+.#{$globalPrefix}_text_bold {
+
+  @include fontWeightBold;
+}
+
+.#{$globalPrefix}_text_medium {
+
+  @include fontWeightMedium;
+}
+
+.#{$globalPrefix}_text_regular {
+
+  @include fontWeightRegular;
+}
+
+.#{$globalPrefix}_font_montserrat {
+
+  @include fontMontserrat;
+}
+
+.#{$globalPrefix}_font_roboto {
+
+  @include fontRoboto;
+}

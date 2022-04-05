@@ -1,0 +1,43 @@
+.wrapper {
+  padding: 0;
+  border-bottom: 1px solid var(--separatorsColor);
+}
+
+.tab {
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 3px solid transparent;
+  margin-right: 20px;
+  color: var(--secondaryText);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  transition: border-bottom 0.3s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &:hover {
+    border-bottom: 3px solid var(--gray400);
+  }
+
+  &__active {
+    color: var(--mainTextColor);
+    border-color: var(--secondaryActiveColor);
+
+    &:hover {
+      border-color: var(--secondaryActiveColor);
+    }
+  }
+}
+
+.content {
+  display: flex;
+}
+
+.text {
+  line-height: 16px;
+}

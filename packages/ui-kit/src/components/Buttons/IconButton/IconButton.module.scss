@@ -1,0 +1,66 @@
+.iconContainer {
+  display: flex;
+  align-items: center;
+
+  &__xs {
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__sm {
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__md {
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__xs.iconContainer__marginRight, &__sm.iconContainer__marginRight {
+    margin-right: 8px;
+  }
+
+  &__md.iconContainer__marginRight {
+    margin-right: 12px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  appearance: none;
+
+  & svg path {
+    transition: fill 0.151s ease-in;
+    fill: var(--iconDefaultColor);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .iconContainer {
+        color: var(--mainTextColor);
+      }
+
+      svg path {
+        fill: var(--iconHoverColor);
+      }
+    }
+  }
+
+  &:active svg path { 
+    fill: var(--iconHoverColor);
+  }
+
+  &[disabled] svg path {
+    fill: var(--disabledColor);
+  }
+
+  -webkit-tap-highlight-color: transparent;
+}

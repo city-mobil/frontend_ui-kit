@@ -1,0 +1,48 @@
+{
+  "private": false,
+  "name": "@city/ui-kit",
+  "version": "5.0.0-alpha.13",
+  "description": "",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "stylelint": "stylelint './src/**/*.{scss,css}'",
+    "stylelint:fix": "stylelint './src/**/*.{scss,css}' --fix",
+    "tsc": "tsc --project tsconfig.json",
+    "lintAll": "concurrently --kill-others-on-fail \"npm:lint\" \"npm:tsc\" \"npm:stylelint\"",
+    "prebuild": "node tools/prebuild.js",
+    "copyFiles": "node tools/copyFiles.js",
+    "build": "npm run prebuild && rollup -c && npm run copyFiles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@city/ui-kit-core": "^5.0.0-alpha.13",
+    "@popperjs/core": "^2.10.1",
+    "classnames": "^2.3.1",
+    "date-fns": "^2.19.0",
+    "normalize.css": "^8.0.1",
+    "react-day-picker": "^7.4.10",
+    "react-popper": "^2.2.5",
+    "react-toastify": "^7.0.3",
+    "use-onclickoutside": "^0.3.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "eslint": "^8.9.0",
+    "rollup": "^2.53.1",
+    "stylelint": "^14.5.0",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17",
+    "react-dom": "^16 || ^17"
+  }
+}

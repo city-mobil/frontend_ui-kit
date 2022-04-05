@@ -1,0 +1,247 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Layer/Usage" component={null} />
+
+## ResizeObserver polyfill
+
+Для вычисления высоты контента используется `ResizeObserver`, поэтому при необходимости установите пакет `@juggle/resize-observer` и добавьте:
+
+```tsx
+import { ResizeObserver as ResizeObserverPolyfill } from '@juggle/resize-observer'
+
+if (typeof window.ResizeObserver !== 'function') {
+  window.ResizeObserver = ResizeObserverPolyfill
+}
+```
+
+## Usage
+
+Слой позиционируется относительно окна `position: fixed` и не имеет каких либо стилей. Поэтому в контент нужно помещать ваш вариант BottomSheet и пр.
+
+Для использования достаточно добавить в рендер в любом месте приложения:
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### opened, onClose
+
+Для того, чтобы управлять слоем нам нужно состояние `opened`
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  const [opened, setOpened] = useState(false)
+
+  return (
+    <>
+      <button onClick={() => setOpened(true)}>Open layer</button>
+
+      <Layer opened={opened} onClose={() => setOpened(false)}>
+        <Content />
+        ...
+      </Layer>
+    </>
+  )
+}
+```
+
+### initialPosition
+
+Начальное положение слоя. Значение может быть в пикселях, например `200`. Либо множителем от 0 до 1, например `0.35` (35% от высоты контента)
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer
+      // Если высота контента > 200px, то слой откроется на 200px контента и его можно развернуть / свернуть жестами.
+      // Если высота контента < 200px, то слой откроется по высоте контента.
+      initialPosition={200}
+      // Либо множителем
+      initialPosition={0.35}
+    >
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### dismissible
+
+Если вам нужно, чтобы слой был всегда открыт, для этого достаточно задать `dismissible` = `false`
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  // Слой будет открыт при первом рендере и его невозможно закрыть жестами.
+  return (
+    <Layer dismissible={false}>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### contentTop, fixedTop
+
+Для того, чтобы вывести какой либо контент над слоем (например: кнопки, заголовок и пр.), есть пропсы `contentTop` и `fixedTop`
+
+При перемещении слоя наверх контент сверху перемещается вместе с ним.
+
+Если задать `fixedTop` = `true`, то контент над слоем будет зафиксирован, дойдя до верхней границы экрана.
+
+Иначе, синхронно уйдет за границы экрана.
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer
+      // сюда передаем контент который будет отрисован над слоем
+      contentTop={<div ... />}
+      // фиксируем его при перемещении
+      fixedTop={true}
+    >
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### disabled
+
+Отключает жесты слоя. Пример кейса: открыт другой слой и нужно отключить взаимодействие с этим слоем, но оставить его открытым на фоне.
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer disabled={true}>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### overScroll
+
+Если слой открыт до конца контента и юзер потянул выше, то будет эффект "резинки".
+
+Выключить данное поведение можно через `overScroll` = `false`
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer overScroll={false}>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### overscrollHeight
+
+При включенном `overScroll` если потянуть наверх - слой обрывается.
+
+Для того, чтобы там продолжалась карточка и т.п., задайте `overscrollHeight` и добавьте `padding-bottom` контенту слоя:
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  const overscrollHeight = 500
+
+  return (
+    <Layer overScroll={true} overscrollHeight={500}>
+      <Content style={{ paddingBottom: overscrollHeight + 8 }} />
+    </Layer>
+  )
+}
+```
+
+### topOffset
+
+Отступ от верхней границы экрана.
+
+По умолчанию: значение из css var `--safe-area-inset-top`.
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer topOffset={100}>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### wheelEnabled
+
+По умолчанию, слой можно двигать с помощью жестов и скролла колеса мыши.
+
+Через пропс `wheelEnabled` можно отключить скролл колесом мыши:
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer wheelEnabled={false}>
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```
+
+### onInitial, onFullscreen, onEnd
+
+Коллбэки состояния слоя.
+
+`onInitial` - срабатывает открытии в начальное положение
+
+`onFullscreen` - срабатывает открытии на весь экран
+
+`onEnd` - срабатывает открытии до конца контента
+
+```tsx
+import { Layer } from '@city/ui-kit-mobile'
+
+const App = () => {
+  return (
+    <Layer
+      onInitial={() => console.log('initial')}
+      onFullscreen={() => console.log('fullscreen')}
+      onEnd={() => console.log('end')}
+    >
+      <Content />
+      ...
+    </Layer>
+  )
+}
+```

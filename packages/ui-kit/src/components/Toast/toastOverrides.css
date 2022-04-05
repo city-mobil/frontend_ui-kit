@@ -1,0 +1,45 @@
+@import '~react-toastify/dist/ReactToastify.css';
+
+.Toastify__toast {
+  max-width: 544px;
+  min-height: 0px;
+  padding: 0px;
+  border-radius: 6px;
+}
+
+.Toastify__toast-container {
+  width: auto;
+}
+
+.Toastify__toast-body {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 0;
+  margin: 0px;
+  cursor: default;
+}
+
+.Toastify__toast--error {
+  background: var(--statusError);
+}
+
+.Toastify__toast--success {
+  background: var(--secondaryHoverColor);
+  box-shadow: 0px 8px 12px rgba(var(--secondaryHoverColor), 0.125);
+}
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container.Toastify__toast-container {
+    top: 1em;
+    right: 1em;
+    left: initial;
+    margin-left: 1em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast.Toastify__toast {
+    margin-bottom: 1rem;
+  }
+}

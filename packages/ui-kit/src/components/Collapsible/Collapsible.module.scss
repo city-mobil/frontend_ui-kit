@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: height 0.15s ease-in-out;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.headerElement {
+  flex: 1;
+}
+
+.body {
+  flex: auto;
+}

@@ -1,0 +1,214 @@
+:root {
+    --black: #0C0C0C;
+    --strong-black: #000;
+    --dark-grey: #585C67;
+    --error: #E73626;
+    --link: #0744FF
+;}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    color: var(--strong-black);
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+h6 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.ui {
+    font-family: Roboto, sans-serif;
+}
+
+h4.ui {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+h6.ui {
+    font-weight: 700;
+}
+
+.paragraph {
+    line-height: 20px;
+}
+
+.subtitle {
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.size-m {
+    font-size: 15px;
+}
+
+.size-l {
+    font-size: 17px;
+}
+
+.line-m {
+    line-height: 24px;
+}
+
+.line-l {
+    line-height: 28px;
+}
+
+.weight-m {
+    font-weight: 500;
+}
+
+.tips {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.st17, .stm17, .st15, .st13, .stm13 {
+    font-family: Roboto, sans-serif;
+}
+
+.st17 {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.stm17 {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.st15 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.st13 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.stm13 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+}
+
+.p12 {
+    color: var(--dark-grey);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.p13 {
+    color: var(--black);
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.p15 {
+    color: var(--strong-black);
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.p17 {
+    color: var(--strong-black);
+    font-size: 17px;
+    line-height: 28px;
+}
+
+.t13 {
+    color: var(--black);
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.t15 {
+    color: var(--black);
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.t17 {
+    color: var(--strong-black);
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.error {
+    color: var(--error);
+    font-size: 12px;
+    line-height: 18px;
+}
+
+a {
+    color: var(--link);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.xs {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+a.sm {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+a.md {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+a.lg {
+    font-size: 17px;
+    line-height: 24px;
+}

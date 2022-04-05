@@ -1,0 +1,6 @@
+export * from './Modal'
+export * from './ModalBody'
+export * from './ModalButtons'
+export * from './ModalCloseIcon'
+export * from './ModalFooter'
+export * from './ModalHeader'

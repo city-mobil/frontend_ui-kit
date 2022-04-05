@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  & > label,
+  & > div {
+    margin-bottom: 15px;
+  }
+}
+
+.groupCheckbox {
+  padding-left: 20px;
+
+  & > label {
+    margin-right: 8px;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.gridWithFixedColumn {
+  display: grid;
+  grid-template-columns: 280px;
+}

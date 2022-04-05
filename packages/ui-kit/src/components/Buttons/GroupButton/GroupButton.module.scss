@@ -1,0 +1,108 @@
+@import '../../../styles/variables';
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.button {
+  position: relative;
+  border: 1px solid;
+  margin-right: -1px;
+  background: white;
+  border-color: var(--inputBorder);
+  transition: box-shadow 0.2s ease-in-out, background-color 0.08s ease-in-out, color 0.1s ease-in-out;
+
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-child {
+    border-radius: 6px 0 0 6px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      z-index: 1;
+      background: var(--gray100);
+      cursor: pointer;
+    }
+  }
+
+  &:active {
+    background-color: var(--primaryDefaultColor);
+    color: white;
+    border-color: var(--primaryActiveColor);
+    box-shadow: inset 0 0 25px 25px var(--primaryActiveColor);
+    transform: scale(0.97);
+
+    transition: transform 0.08s cubic-bezier(0.39, 0.575, 0.565, 1), box-shadow 0.3s ease, background-color 0.1s ease,
+      color 0.1s ease;
+  }
+
+  &__selected {
+    z-index: 2;
+    background: var(--primaryDefaultColor);
+    color: white;
+    border-color: var(--primaryDefaultColor);
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--primaryDefaultColor);
+        cursor: default;
+      }
+    }
+
+    &:active {
+      background-color: var(--primaryDefaultColor);
+      transform: none;
+      box-shadow: none;
+      border-color: var(--primaryDefaultColor);
+    }
+  }
+
+  &__fullWidth {
+    flex-grow: 1;
+    padding: 0;
+  }
+
+  &__xs {
+    height: $height__xs;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  &__sm {
+    height: $height__sm;
+    padding-right: 28px;
+    padding-left: 28px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &__md {
+    height: $height__md;
+    padding-right: 36px;
+    padding-left: 36px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  &__lg {
+    height: $height__lg;
+    padding-right: 36px;
+    padding-left: 36px;
+    font-size: 17px;
+    line-height: 24px;
+  }
+}

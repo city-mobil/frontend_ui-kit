@@ -1,0 +1,22 @@
+.selectItem {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  color: var(--mainTextColor);
+  transition: 0.1s;
+  cursor: pointer;
+
+  &:hover:not(.selectItem__selected) {
+    background-color: var(--gray200);
+  }
+
+  &:active:not(.selectItem__selected) {
+    background-color: var(--gray400);
+  }
+
+  &__selected {
+    background-color: var(--primaryDefaultColor);
+    color: var(--onPrimaryDefaultColor);
+  }
+}

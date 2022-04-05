@@ -1,0 +1,36 @@
+.xs {
+  max-width: 96px;
+}
+
+.sm,
+.md {
+  max-width: 100px;
+}
+
+.lg {
+  max-width: 140px;
+}
+
+.target {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: inset 0 1px 0 0 var(--inputBorder), inset 0 -1px 0 0 var(--inputBorder),
+    inset 1px 0 0 0 var(--inputBorder);
+
+  &.target:hover:not(:focus) {
+    box-shadow: inset 0 1px 0 0 var(--inputBorderHover), inset 0 -1px 0 0 var(--inputBorderHover),
+      inset 1px 0 0 0 var(--inputBorderHover);
+  }
+
+  border-right-width: 0;
+}
+
+.lgTarget {
+  margin-top: 18px;
+}
+
+.targetWrapper {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

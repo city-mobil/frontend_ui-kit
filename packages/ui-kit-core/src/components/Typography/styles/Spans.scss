@@ -1,0 +1,30 @@
+@import '../../../styles/selectors';
+@import './mixins';
+
+.#{$globalPrefix}_s12 {
+
+  @include commonText;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.#{$globalPrefix}_s13 {
+
+  @include commonText;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.#{$globalPrefix}_s15 {
+
+  @include commonText;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.#{$globalPrefix}_s17 {
+
+  @include commonText;
+  font-size: 17px;
+  line-height: 24px;
+}

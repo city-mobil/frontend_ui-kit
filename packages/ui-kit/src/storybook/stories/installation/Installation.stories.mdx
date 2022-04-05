@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Installation/Installation ui-kit" component={null} />
+
+## Installation
+`@city/ui-kit` is an npm package, but published only to local npm registry.
+
+To use package in your project you should switch to local npm registry by adding `.npmrc` file to the root of the project with the following content:
+```
+registry=https://verdaccio.city-mobil.ru/
+```
+
+Then you can install package by typing
+```shell script
+npm install @city/ui-kit
+```
+or
+```shell script
+yarn add @city/ui-kit
+```
+
+> UI-kit requires `react`, `react-dom` to be already installed in the project for correct work.
+
+Add global styles **(required)**
+```jsx
+// App.tsx
+import '@city/ui-kit/index.css'
+```
+Add fonts **(required)**
+```jsx
+// index.html
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Wrap your application in `UIKitProvider` component.
+
+**Use any component from package only as `UIKitProvider` child.**
+```jsx
+// App.tsx
+import { UIKitProvider } from '@city/ui-kit'
+
+const App = () => (
+  <UIKitProvider>
+    <AllYourApp />
+  </UIKitProvider>
+)
+```

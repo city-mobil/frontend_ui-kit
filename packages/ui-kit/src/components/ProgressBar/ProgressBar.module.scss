@@ -1,0 +1,12 @@
+.wrapper {
+  overflow: hidden;
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background-color: var(--gray300);
+}
+
+.bar {
+  height: 4px;
+  background-color: var(--statusSuccess);
+}

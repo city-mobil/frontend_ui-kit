@@ -1,0 +1,9 @@
+.container {
+  & > div {
+    margin-top: 10px;
+  }
+}
+
+.primaryContainer{
+  min-height: 150px;
+}

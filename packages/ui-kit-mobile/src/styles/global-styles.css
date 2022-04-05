@@ -1,0 +1,17 @@
+body {
+    font-family: Roboto, Arial, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: inherit;
+}
+
+
+.Select-menu-outer {
+    position:relative;
+    z-index: 1000;
+}

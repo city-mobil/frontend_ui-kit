@@ -1,0 +1,50 @@
+@import '../../../styles/selectors';
+@import "./mixins";
+
+.#{$globalPrefix}_h1 {
+
+  @include fontMontserrat;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.#{$globalPrefix}_h2 {
+
+  @include fontMontserrat;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.#{$globalPrefix}_h3 {
+
+  @include fontMontserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.#{$globalPrefix}_h4 {
+
+  @include fontMontserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.#{$globalPrefix}_h5 {
+
+  @include fontMontserrat;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.#{$globalPrefix}_h6 {
+
+  @include fontMontserrat;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}

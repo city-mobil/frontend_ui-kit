@@ -1,0 +1,69 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Installation/Use modals" component={null} />
+
+## Usage
+Define modal component
+
+```jsx
+import React, { useCallback } from 'react'
+import { Modal, ModalHeader, ModalBody, ModalFooter, ModalButtons, ModalCloseIcon, Button } from '@city/ui-kit'
+
+export const ModalComponent = ({ onSuccess, onCancel }) => {
+  const onSuccessAction = useCallback(() => {
+    onSuccess(true)
+  }, [onSuccess])
+
+  const onCancelAction = useCallback(() => {
+    onCancel(false)
+  }, [onCancel])
+
+  return (
+    <Modal>
+      <ModalCloseIcon onClick={onCancelAction}/>
+      <ModalHeader>
+        <h3 className="mb-16">Modal header</h3>
+      </ModalHeader>
+      <ModalBody>
+          Modal body
+      </ModalBody>
+      <ModalFooter>
+        <ModalButtons>
+          <Button onClick={onSuccessAction} variant="primary">Save</Button>
+          <Button onClick={onCancelAction} variant="secondary">Cancel</Button>
+        </ModalButtons>
+      </ModalFooter>
+    </Modal>
+  )
+}
+```
+
+Open modal
+
+```jsx
+import { useModal, Button } from '@city/ui-kit'
+
+const Component = () => {
+  const { openModal } = useModal()
+  const onClick = useCallback(() => {
+    openModal(ModalComponent).catch(error => error)
+  }, [openModal])
+
+  return <Button onClick={onClick}>{title}</Button>
+}
+```
+
+Change modal transition
+
+```jsx
+import { useModal, Button, Transitions } from '@city/ui-kit'
+
+const Component = () => {
+  const { openModal } = useModal()
+  const onClick = useCallback(() => {
+    openModal(ModalComponent, { modalTransition: Transitions.Scale }).catch(error => error)
+  }, [openModal])
+
+  return <Button onClick={onClick}>{title}</Button>
+}
+```

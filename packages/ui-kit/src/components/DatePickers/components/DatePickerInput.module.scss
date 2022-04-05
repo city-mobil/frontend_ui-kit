@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-width: 20px;
+}
+
+.input {
+  &__leftSquareBorder {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &__rightSquareBorder {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

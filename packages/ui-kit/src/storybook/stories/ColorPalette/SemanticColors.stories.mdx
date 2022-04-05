@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { SemanticColors, Figma } from './SemanticColors'
+
+<Meta title="ColorThemes/Semantic colors" component={null} />
+
+## Figma
+In the **best scenario** semantic color should be specified in figma.
+<Canvas>
+  <Story name="Figma">
+    <Figma />
+  </Story>
+</Canvas>
+
+
+## Access
+#### Styled components
+```
+const StyledComp = styled.div`
+  color: ${props => props.theme.separatorsColor};
+`
+```
+
+#### CSS modules
+```css
+.selector {
+  color: var(--separatorsColor);
+}
+```
+
+#### JS
+```jsx
+import { useTheme } from '@city/ui-kit'
+
+const Component = () => {
+  const currentThemeObject = useTheme()
+
+  // ...
+}
+```
+
+## Semantic colors values for chosen color theme
+If only hex value is specified if figma, then you can CMD+F which semantic variable uses this color and choose the most suitable or just pick one from color palette.
+<Canvas>
+  <Story name="Semantic variables">
+    <SemanticColors />
+  </Story>
+</Canvas>

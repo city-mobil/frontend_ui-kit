@@ -1,0 +1,66 @@
+.checkBoxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  max-height: 68px;
+  & > * {
+    max-width: 100px;
+  }
+  & > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.block {
+  /* stylelint-disable-next-line no-descending-specificity */
+  & > * {
+    margin-bottom: 20px;
+  }
+  & > *:last-child {
+    margin-bottom: 32px;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  & > *:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.cell {
+  flex: 1 0;
+}
+
+.optionsSubHeader {
+  margin-bottom: 17px;
+}
+
+.submitBlock {
+  display: flex;
+  margin-top: 24px;
+
+  & > *:first-child {
+    margin-right: 16px;
+  }
+}
+
+.dashedDivider {
+  border-top: 1px dashed #d6d8dd;
+  margin: 32px 0;
+}
+
+.divider {
+  height: 1px;
+  margin: 0 -20px;
+  background-color: #e5e5e5;
+}
+
+.narrowModal {
+  & > div {
+    width: 329px;
+    min-width: 329px;
+  }
+}

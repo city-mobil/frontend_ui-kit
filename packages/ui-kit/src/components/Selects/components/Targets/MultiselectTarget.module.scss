@@ -1,0 +1,20 @@
+.contentMultiselect {
+  width: initial;
+}
+
+.inputMultiselect {
+  width: initial;
+}
+
+.contentMultiselectLg {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 26px;
+  padding-bottom: 4px;
+  color: var(--labelsTextColor);
+  gap: 8px;
+}
+
+.containerMultiselectLg {
+  align-items: initial;
+}

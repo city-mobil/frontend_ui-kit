@@ -1,0 +1,135 @@
+.radioIcon {
+  position: relative;
+  display: inline-block;
+  grid-area: icon;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--inputBorder);
+  border-radius: 50%;
+  transition-duration: 0.2s, 0.15s, 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow, background-color, border-color;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--gray0);
+    transform: scale(0.8);
+    transition-duration: 0.1s;
+    transition-property: opacity;
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+  &__checked {
+    border: 2px solid var(--primaryBorderColor);
+    background-color: var(--primaryHoverColor);
+    box-shadow: inset 0 0 10px 8px var(--primaryBorderColor);
+    transition-duration: 0.2s, 0.2s, 0.3s;
+    transition-timing-function: initial;
+    transition-property: box-shadow, border-color, background-color;
+  }
+
+  &__checked:after {
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-delay: initial;
+    transition-property: transform;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &__disabled {
+    background-color: var(--disabledColor);
+  }
+
+  &__disabled.radioIcon__checked {
+    border: 2px solid var(--inputBorder);
+    box-shadow: inset 0 0 10px 8px var(--disabledColor);
+  }
+
+  &__disabled.radioIcon__checked:after {
+    background: var(--mutedTextColor);
+  }
+}
+
+.label {
+  display: grid;
+  grid-template:
+    'icon label'
+    '. description' / 16px auto;
+  grid-column-gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  color: var(--mainTextColor);
+  -webkit-tap-highlight-color: transparent;
+
+  @media (hover: hover) {
+    &:hover {
+      .radioIcon {
+        background-color: var(--cellHover);
+      }
+    }
+  }
+
+  &__disabled {
+    cursor: default;
+    color: var(--mutedTextColor);
+  }
+
+  .radioIcon.label__checked {
+    border-color: var(--primaryActiveColor);
+    box-shadow: inset 0 0 10px 8px var(--primaryActiveColor);
+    background-color: var(--primaryActiveColor);
+  }
+}
+
+.hiddenInput {
+  width: 0;
+  height: 0;
+  margin: 0;
+  visibility: hidden;
+}
+
+.description {
+  grid-area: description;
+  margin-top: 4px;
+  color: var(--secondaryText);
+}
+
+.overflowHiddenContainer {
+  grid-area: label;
+  overflow: hidden;
+}
+
+.customChildContainer {
+  grid-area: label;
+}
+
+.p13Styled {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.groupContainer {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 0;
+  gap: 20px;
+
+  &__vertical {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  & > & {
+    margin-left: 20px;
+  }
+}
